@@ -5,3 +5,5 @@ npm i sbd
 npm i algorithmia
 
 npm i readline-sync
+
+npm i googleapis
