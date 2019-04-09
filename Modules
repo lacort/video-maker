@@ -8,3 +8,6 @@ npm i readline-sync
 
 npm i googleapis
 
+npm i image-downloader
+
+
