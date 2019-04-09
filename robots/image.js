@@ -8,6 +8,9 @@ async function robot(){
     const content = state.load()
 
     await fetchImagesOfAllSentences(content)
+
+    await downloadAllImages(content)
+
     state.save(content)
 
     async function fetchImagesOfAllSentences(content){
@@ -34,7 +37,29 @@ async function robot(){
         })
 
         return imageUrl
-    }       
+    }     
+    
+    async function downloadAllImages(content){
+        for (let sentenceIndex = 0; sentenceIndex < content.sentences.length; sentenceIndex++){
+            const images = content.sentences[sentenceIndex].images
+        
+
+            for (let imageIndex = 0; imageIndex < images.length; imageIndex++){
+                const imageUrl = images[imageIndex]
+
+                try{
+                    //await downloadImage()
+                    console.log(`> Baixou imagem com Sucesso: ${imageUrl}`)
+                    break
+
+                } catch(error){
+                  console.log(`> Erro ao Baixar (${imageUrl}): ${error}`)
+
+                }
+
+            }
+        }
+    }
 
 }
 
