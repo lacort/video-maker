@@ -14,4 +14,6 @@ npm i image-downloader
 
 npm i gm
 
+npm i express
+
 #https://imagemagick.org/script/download.php#windows ticar opção lagacy
