@@ -63,12 +63,3 @@ typings/
 #credintials
 credentials/*.json
 
-content.json
-
-content/*.png
-
-.DS_Store
-
-.idea
-
-.vscode
