@@ -67,8 +67,16 @@ content.json
 
 content/*.png
 
+content/*.mov
+
+content/*.avi
+
 .DS_Store
 
 .idea
 
 .vscode
+
+.avi
+
+.mov
