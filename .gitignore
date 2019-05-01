@@ -63,6 +63,7 @@ typings/
 #credintials
 credentials/*.json
 
+
 content.json
 
 content/*.png
