@@ -3,7 +3,7 @@ const state = require('./state.js')
 
 function robot() {
   const content = {
-    maximumSentences: 7
+    maximumSentences: 8
   }
 
   content.searchTerm = askAndReturnSearchTerm()

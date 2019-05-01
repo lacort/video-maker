@@ -39,24 +39,26 @@ async function robot(){
         
         content.sourceContentOriginal = wikipediaContent.content
     }
-    function sanitezeContent(content){
-        const withoutBlankLinesAndMarkdown =  removeBlankLinesAndMarkdown(content.sourceContentOriginal)
-        const withoutDatesInParentheses = removeDatesInPrentheses(withoutBlankLinesAndMarkdown)
-        //console.log(withoutDatesInParentheses)
-        content.sourceContentSanitized = withoutDatesInParentheses
+    
 
-        function removeBlankLinesAndMarkdown(text){
-            const allLines = text.split('\n')
-            const withoutBlankLinesAndMarkdown = allLines.filter((line) => {
-                if (line.trim().length === 0 || line.trim().startsWith('=')){
-                    return false
-                }
-                return true
-            })
-
-            return withoutBlankLinesAndMarkdown.join(' ')       
+        function sanitezeContent(content){
+            const withoutBlankLinesAndMarkdown =  removeBlankLinesAndMarkdown(content.sourceContentOriginal)
+            const withoutDatesInParentheses = removeDatesInPrentheses(withoutBlankLinesAndMarkdown)
+            //console.log(withoutDatesInParentheses)
+            content.sourceContentSanitized = withoutDatesInParentheses
+    
+            function removeBlankLinesAndMarkdown(text){
+                const allLines = text.split('\n')
+                const withoutBlankLinesAndMarkdown = allLines.filter((line) => {
+                    if (line.trim().length === 0 || line.trim().startsWith('=')){
+                        return false
+                    }
+                    return true
+                })
+    
+                return withoutBlankLinesAndMarkdown.join(' ')       
+            }
         }
-    }
 
     function removeDatesInPrentheses(text){
         return text.replace((/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g,' '))
@@ -80,7 +82,7 @@ async function robot(){
     
 
     function limitMaximumSentences(content) {
-        content.sentences = content.sentences.slice(0, content.maximumSentences)
+        content.sentences = content.sentences.slice(1, content.maximumSentences)
     }
 
     async function fetchKeywordsOfAllSentences(){
@@ -111,3 +113,5 @@ async function robot(){
     }
 }
 module.exports = robot
+
+
