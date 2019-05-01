@@ -63,3 +63,17 @@ typings/
 #credintials
 credentials/*.json
 
+
+content.json
+
+content/*.png
+
+content/*.mov
+
+content/*.avi
+
+.DS_Store
+
+.idea
+
+.vscode
